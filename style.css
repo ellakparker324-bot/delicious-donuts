@@ -109,9 +109,8 @@ header{
     align-items:center;
     padding:0 8%;
     background:
-        linear-gradient(rgba(75,46,34,.55),rgba(75,46,34,.55)),
-        url("images/photo one.jpg")
-        center/cover;
+       linear-gradient(rgba(75,46,34,.55), rgba(75,46,34,.55)),
+url("images/photo one.jpg") center/cover;
 }
 
 .hero-content{
