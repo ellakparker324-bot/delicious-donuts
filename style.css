@@ -1,166 +1,431 @@
+/* ===========================
+   Delicious Donuts
+   Premium Bakery Website CSS
+=========================== */
+
+:root {
+    --cream: #fff7ed;
+    --light-cream: #fffaf5;
+    --brown: #4b2e22;
+    --dark-brown: #2d1810;
+    --pink: #e8a0a8;
+    --soft-pink: #f7d5d8;
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(75, 46, 34, 0.12);
+}
+
+/* Reset */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:'Poppins',sans-serif;
-background:#FFF8F1;
-color:#4B2E2E;
-line-height:1.6;
+    font-family:"Poppins",sans-serif;
+    background:var(--cream);
+    color:var(--brown);
+    line-height:1.6;
 }
 
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
+img{
+    max-width:100%;
+    display:block;
 }
 
-header{
-position:fixed;
-top:0;
-width:100%;
-background:white;
-box-shadow:0 2px 15px rgba(0,0,0,.08);
-z-index:1000;
-}
-
-.nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 0;
-}
-
-nav{
-display:flex;
-gap:30px;
-}
-
-nav a{
-text-decoration:none;
-color:#4B2E2E;
-font-weight:600;
-transition:.3s;
-}
-
-nav a:hover{
-color:#F78DA7;
-}
-
-.hero{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-background:
-linear-gradient(rgba(255,248,241,.82),rgba(255,248,241,.82)),
-url("https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1800&q=80");
-background-size:cover;
-background-position:center;
-}
-
-.hero h2{
-font-size:70px;
-font-family:'Playfair Display',serif;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:22px;
-max-width:700px;
-margin:auto;
-margin-bottom:35px;
-}
-
-.button{
-display:inline-block;
-padding:16px 36px;
-background:#F78DA7;
-color:white;
-text-decoration:none;
-border-radius:50px;
-font-weight:600;
-transition:.3s;
-}
-
-.button:hover{
-transform:translateY(-4px);
-background:#e96c91;
-}
-
-section{
-padding:100px 0;
+h1,h2,h3{
+    font-family:"Playfair Display",serif;
+    color:var(--dark-brown);
 }
 
 h2{
-font-family:'Playfair Display',serif;
-font-size:42px;
-margin-bottom:25px;
-text-align:center;
+    font-size:2.5rem;
+    text-align:center;
+    margin-bottom:40px;
 }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:25px;
-margin-top:40px;
+p{
+    font-size:1rem;
 }
 
-.card{
-background:white;
-padding:30px;
-border-radius:18px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-transition:.3s;
+/* Navigation */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-.card:hover{
-transform:translateY(-8px);
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:rgba(255,247,237,.95);
+    backdrop-filter:blur(10px);
+    box-shadow:var(--shadow);
 }
 
-.reviews{
-background:#FDEAF0;
-text-align:center;
+.logo{
+    font-family:"Playfair Display",serif;
+    font-size:1.8rem;
+    font-weight:700;
+    color:var(--brown);
 }
 
-.contact{
-text-align:center;
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:30px;
 }
 
-footer{
-background:#4B2E2E;
-color:white;
-text-align:center;
-padding:30px;
+.nav-links a{
+    text-decoration:none;
+    color:var(--brown);
+    font-weight:500;
+    transition:.3s;
 }
 
-@media(max-width:768px){
+.nav-links a:hover{
+    color:var(--pink);
+}
 
-.hero h2{
-font-size:46px;
+.menu-toggle{
+    display:none;
+    font-size:2rem;
+    cursor:pointer;
+}
+
+/* Hero */
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    padding:0 8%;
+    background:
+        linear-gradient(rgba(75,46,34,.55),rgba(75,46,34,.55)),
+        url("https://images.unsplash.com/photo-1551024506-0bccd828d307")
+        center/cover;
+}
+
+.hero-content{
+    max-width:650px;
+    color:white;
+}
+
+.hero h1{
+    color:white;
+    font-size:clamp(3rem,6vw,5rem);
+    margin-bottom:20px;
 }
 
 .hero p{
-font-size:18px;
+    font-size:1.2rem;
+    margin-bottom:35px;
 }
 
-.nav{
-flex-direction:column;
-gap:15px;
+.button{
+    display:inline-block;
+    background:var(--pink);
+    color:white;
+    padding:15px 35px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
 }
 
-nav{
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
+.button:hover{
+    background:white;
+    color:var(--brown);
 }
+
+/* General Sections */
+
+section{
+    padding:80px 8%;
+}
+
+.section-container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.about p{
+    max-width:850px;
+    margin:15px auto;
+    text-align:center;
+}
+/* Menu */
+
+.menu-section{
+    background:var(--light-cream);
+}
+
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.menu-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+    text-align:center;
+    transition:.3s;
+}
+
+.menu-card:hover{
+    transform:translateY(-8px);
+}
+
+.menu-card h3{
+    margin-bottom:15px;
+}
+
+/* Reviews */
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.review-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+    text-align:center;
+}
+
+.review-card strong{
+    display:block;
+    margin-top:15px;
+    color:var(--pink);
+}
+
+/* Gallery */
+
+.gallery{
+    background:var(--light-cream);
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.gallery-grid img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.03);
+}
+
+/* Contact */
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin-bottom:15px;
+}
+
+.contact iframe{
+    width:100%;
+    height:400px;
+    border:0;
+    border-radius:20px;
+    margin-top:30px;
+    box-shadow:var(--shadow);
+}
+/* FAQ */
+
+.faq{
+    background:var(--light-cream);
+}
+
+.faq-item{
+    background:white;
+    padding:25px;
+    margin-bottom:20px;
+    border-radius:15px;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.faq-item:hover{
+    transform:translateY(-5px);
+}
+
+.faq-item h3{
+    margin-bottom:10px;
+}
+
+/* Footer */
+
+footer{
+    background:var(--dark-brown);
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+footer p{
+    margin:8px 0;
+}
+
+/* Animations */
+
+.menu-card,
+.review-card,
+.gallery-grid img,
+.faq-item{
+    animation:fadeUp .8s ease both;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* Utility */
+
+.button,
+.nav-links a,
+.menu-card,
+.review-card,
+.gallery-grid img,
+.faq-item{
+    transition:all .3s ease;
+}
+/* ===========================
+   Responsive Design
+=========================== */
+
+@media (max-width: 992px){
+
+    .menu-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .review-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero h1{
+        font-size:3.5rem;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .navbar{
+        padding:20px;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:80px;
+        left:0;
+        width:100%;
+        background:var(--cream);
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
+        padding:30px 0;
+        display:none;
+        box-shadow:var(--shadow);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .hero{
+        min-height:80vh;
+        text-align:center;
+        justify-content:center;
+    }
+
+    .hero-content{
+        max-width:100%;
+    }
+
+    .hero h1{
+        font-size:2.8rem;
+    }
+
+    .menu-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:60px 6%;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .logo{
+        font-size:1.4rem;
+    }
+
+    h2{
+        font-size:2rem;
+    }
+
+    .hero h1{
+        font-size:2.3rem;
+    }
+
+    .button{
+        padding:14px 28px;
+        font-size:.95rem;
+    }
+
+    .contact iframe{
+        height:300px;
+    }
 
 }
